@@ -46,7 +46,7 @@ func (api *API) PostTransaction(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func (api *API) GetUserTransactionsByUserId(w http.ResponseWriter, r *http.Request) {
+func (api *API) GetTransactionsByUserId(w http.ResponseWriter, r *http.Request) {
 	initHeaders(w)
 	api.logger.Info("Get user transactions by user id /api/transaction{id}")
 
@@ -76,7 +76,7 @@ func (api *API) GetUserTransactionsByUserId(w http.ResponseWriter, r *http.Reque
 	json.NewEncoder(w).Encode(tl)
 }
 
-func (api *API) GetUserTransactionsByUserEmail(w http.ResponseWriter, r *http.Request) {
+func (api *API) GetTransactionsByUserEmail(w http.ResponseWriter, r *http.Request) {
 	initHeaders(w)
 	api.logger.Info("Get Get user transactions by user email /api/transaction{email}")
 

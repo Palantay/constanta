@@ -9,7 +9,7 @@ api-build: dc-up migrate-up build start
 build:
 	go build -v ./cmd/api/
 
-.PHONY: migrate up
+.PHONY: migrate-up
 migrate-up:
 	migrate -path migrations -database "postgres://localhost:5432/db?sslmode=disable&user=admin&password=admin" up
 

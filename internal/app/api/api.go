@@ -45,8 +45,8 @@ var (
 
 func (a *API) configureRouterField() {
 	a.router.HandleFunc(prefix+"/transaction", a.PostTransaction).Methods("POST")
-	a.router.HandleFunc(prefix+"/transaction/{id}", a.GetUserTransactionsByUserId).Methods("GET")
-	a.router.HandleFunc(prefix+"/transaction", a.GetUserTransactionsByUserEmail).Methods("GET")
+	a.router.HandleFunc(prefix+"/transaction/{id}", a.GetTransactionsByUserId).Methods("GET")
+	a.router.HandleFunc(prefix+"/transaction", a.GetTransactionsByUserEmail).Methods("GET")
 	a.router.HandleFunc(prefix+"/transaction/status/{id}", a.GetStatusTransaction).Methods("GET")
 	a.router.HandleFunc(prefix+"/user/auth", a.PostToAuth).Methods("POST")
 	a.router.Handle(prefix+"/transaction/status", middleware.JwtMiddleware.Handler(
